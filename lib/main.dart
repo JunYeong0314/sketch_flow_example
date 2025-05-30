@@ -71,20 +71,36 @@ class HomePage extends StatelessWidget {
             children: [
               Text(
                 "[Github]",
-                style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold, color: Colors.white),
+                style: TextStyle(
+                  fontSize: 10,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                ),
               ),
               SelectableText(
                 "https://github.com/Fasoo-DigitalPage/sketch_flow",
-                style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold, color: Colors.white),
+                style: TextStyle(
+                  fontSize: 10,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                ),
               ),
-              SizedBox(height: 8,),
+              SizedBox(height: 8),
               Text(
                 "[pub.dev]",
-                style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold, color: Colors.white),
+                style: TextStyle(
+                  fontSize: 10,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                ),
               ),
               SelectableText(
                 "https://pub.dev/packages/sketch_flow",
-                style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold, color: Colors.white),
+                style: TextStyle(
+                  fontSize: 10,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                ),
               ),
             ],
           ),

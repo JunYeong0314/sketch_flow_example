@@ -35,9 +35,9 @@ class _MemoCreatePageState extends State<MemoCreatePage> {
 
           if (image != null && controller.contents.isNotEmpty) {
             final memo = SketchMemo(
-                date: DateTime.now().toIso8601String().substring(0, 10),
-                thumbnail: Image.memory(image),
-                json: json
+              date: DateTime.now().toIso8601String().substring(0, 10),
+              thumbnail: Image.memory(image),
+              json: json,
             );
 
             MemoRepository.instance.addMemo(memo: memo);
@@ -45,10 +45,7 @@ class _MemoCreatePageState extends State<MemoCreatePage> {
           }
         },
       ),
-      body: SketchBoard(
-        controller: controller,
-        repaintKey: repaintKey,
-      ),
+      body: SketchBoard(controller: controller, repaintKey: repaintKey),
       bottomNavigationBar: SketchBottomBar(controller: controller),
     );
   }

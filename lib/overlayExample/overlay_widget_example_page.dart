@@ -96,42 +96,45 @@ class _OverlayWidgetExamplePageState extends State<OverlayWidgetExamplePage>
                 title: "Overlay Widget Example",
                 onTap: () => Navigator.pop(context),
               ),
-      body: Stack(
-        children: [
-          Center(
-            child:
+      body: Padding(
+          padding: EdgeInsets.symmetric(vertical: 12),
+          child: Stack(
+            children: [
+              Center(
+                child:
                 _isEditing
                     ? SketchBoard(
-                      repaintKey: _repaintKey,
-                      controller: _controller,
-                      boardHeightSize: MediaQuery.of(context).size.height * 0.8,
-                      boardWidthSize: MediaQuery.of(context).size.width * 0.95,
-                      overlayWidget: SizedBox(
-                        height: MediaQuery.of(context).size.height * 0.8,
-                        width: MediaQuery.of(context).size.width * 0.95,
-                        child: _overlayWidget,
-                      ),
-                    )
+                  repaintKey: _repaintKey,
+                  controller: _controller,
+                  boardHeightSize: MediaQuery.of(context).size.height * 0.8,
+                  boardWidthSize: MediaQuery.of(context).size.width * 0.95,
+                  overlayWidget: SizedBox(
+                    height: MediaQuery.of(context).size.height * 0.8,
+                    width: MediaQuery.of(context).size.width * 0.95,
+                    child: _overlayWidget,
+                  ),
+                )
                     : _overlayWidget,
-          ),
-          Visibility(
-            visible: !_isEditing,
-            child: Positioned(
-              bottom: 0,
-              right: 8,
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  minimumSize: Size(60, 60),
-                  shape: const CircleBorder(),
-                  backgroundColor: Colors.white,
-                  foregroundColor: Colors.black,
-                ),
-                onPressed: _toggleEditing,
-                child: Icon(Icons.draw, size: 24),
               ),
-            ),
+              Visibility(
+                visible: !_isEditing,
+                child: Positioned(
+                  bottom: 0,
+                  right: 8,
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      minimumSize: Size(60, 60),
+                      shape: const CircleBorder(),
+                      backgroundColor: Colors.white,
+                      foregroundColor: Colors.black,
+                    ),
+                    onPressed: _toggleEditing,
+                    child: Icon(Icons.draw, size: 24),
+                  ),
+                ),
+              ),
+            ],
           ),
-        ],
       ),
       bottomNavigationBar: SizedBox(
         height: 90,

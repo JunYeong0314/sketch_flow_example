@@ -5,7 +5,7 @@ class MemoTopBar extends StatelessWidget implements PreferredSizeWidget {
   const MemoTopBar({
     super.key,
     required this.controller,
-    required this.onClickCompleted
+    required this.onClickCompleted,
   });
 
   final SketchController controller;
@@ -21,8 +21,8 @@ class MemoTopBar extends StatelessWidget implements PreferredSizeWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             IconButton(
-                onPressed: () => Navigator.pop(context),
-                icon: Icon(Icons.arrow_back_ios)
+              onPressed: () => Navigator.pop(context),
+              icon: Icon(Icons.arrow_back_ios),
             ),
             Row(
               children: [
@@ -32,9 +32,9 @@ class MemoTopBar extends StatelessWidget implements PreferredSizeWidget {
                     return IconButton(
                       onPressed: canUndo ? () => controller.undo() : null,
                       icon:
-                      canUndo
-                          ? Icon(Icons.undo)
-                          : Icon(Icons.undo, color: Colors.grey),
+                          canUndo
+                              ? Icon(Icons.undo)
+                              : Icon(Icons.undo, color: Colors.grey),
                     );
                   },
                 ),
@@ -44,21 +44,20 @@ class MemoTopBar extends StatelessWidget implements PreferredSizeWidget {
                     return IconButton(
                       onPressed: canRedo ? () => controller.redo() : null,
                       icon:
-                      canRedo
-                          ? Icon(Icons.redo)
-                          : Icon(Icons.redo, color: Colors.grey),
+                          canRedo
+                              ? Icon(Icons.redo)
+                              : Icon(Icons.redo, color: Colors.grey),
                     );
                   },
                 ),
                 IconButton(
-                    onPressed: () => onClickCompleted(),
-                    icon: Icon(Icons.check)
-                )
-
+                  onPressed: () => onClickCompleted(),
+                  icon: Icon(Icons.check),
+                ),
               ],
-            )
+            ),
           ],
-        )
+        ),
       ),
     );
   }

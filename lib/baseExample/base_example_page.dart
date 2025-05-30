@@ -11,12 +11,11 @@ class BaseExamplePage extends StatelessWidget {
 
     return Scaffold(
       appBar: SketchTopBar(
-          controller: controller,
-          onClickBackButton: () => Navigator.pop(context),
+        controller: controller,
+        onClickBackButton: () => Navigator.pop(context),
       ),
       body: SketchBoard(controller: controller),
       bottomNavigationBar: SketchBottomBar(controller: controller),
     );
   }
-
 }

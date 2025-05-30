@@ -10,7 +10,7 @@ class MemoDetailPage extends StatefulWidget {
   const MemoDetailPage({
     super.key,
     required this.sketchMemo,
-    required this.sketchMemoIndex
+    required this.sketchMemoIndex,
   });
 
   final SketchMemo sketchMemo;
@@ -78,25 +78,27 @@ class _MemoDetailPageState extends State<MemoDetailPage>
       appBar:
           _isEditing
               ? MemoTopBar(
-              controller: _controller,
-              onClickCompleted: () async {
-                final json = _controller.toJson();
-                final image = await _controller.extractPNG(repaintKey: _repaintKey);
-
-                if (image != null) {
-                  MemoRepository.instance.updateMemo(
-                      index: widget.sketchMemoIndex,
-                      updateMemo: SketchMemo(
-                          thumbnail: Image.memory(image),
-                          json: json,
-                          date: DateTime.now().toString().substring(0, 10)
-                      )
+                controller: _controller,
+                onClickCompleted: () async {
+                  final json = _controller.toJson();
+                  final image = await _controller.extractPNG(
+                    repaintKey: _repaintKey,
                   );
 
-                  _toggleEditing();
-                }
-              }
-          )
+                  if (image != null) {
+                    MemoRepository.instance.updateMemo(
+                      index: widget.sketchMemoIndex,
+                      updateMemo: SketchMemo(
+                        thumbnail: Image.memory(image),
+                        json: json,
+                        date: DateTime.now().toString().substring(0, 10),
+                      ),
+                    );
+
+                    _toggleEditing();
+                  }
+                },
+              )
               : BaseTopBar(
                 title: widget.sketchMemo.date,
                 onTap: () => Navigator.pop(context),

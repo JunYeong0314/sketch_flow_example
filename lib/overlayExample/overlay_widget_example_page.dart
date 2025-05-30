@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:sketch_flow/sketch_controller.dart';
 import 'package:sketch_flow/sketch_model.dart';
 import 'package:sketch_flow/sketch_view.dart';
+import 'package:sketch_flow_example/common/base_top_bar.dart';
 import 'package:sketch_flow_example/overlayExample/overlay_widget_example_top_bar.dart';
 
 class OverlayWidgetExamplePage extends StatefulWidget {
@@ -88,10 +89,13 @@ class _OverlayWidgetExamplePageState extends State<OverlayWidgetExamplePage>
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: OverlayWidgetExampleTopBar(
-        controller: _controller,
-        isEditing: _isEditing,
-      ),
+      appBar:
+          _isEditing
+              ? OverlayWidgetExampleTopBar(controller: _controller)
+              : BaseTopBar(
+                title: "Overlay Widget Example",
+                onTap: () => Navigator.pop(context),
+              ),
       body: Stack(
         children: [
           Center(

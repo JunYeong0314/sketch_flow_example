@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:sketch_flow/sketch_controller.dart';
 
-class OverlayWidgetExampleTopBar extends StatelessWidget
-    implements PreferredSizeWidget {
-  final SketchController controller;
+class MemoTopBar extends StatelessWidget implements PreferredSizeWidget {
+  const MemoTopBar({
+    super.key,
+    required this.controller,
+    required this.onClickCompleted
+  });
 
-  const OverlayWidgetExampleTopBar({super.key, required this.controller});
+  final SketchController controller;
+  final Function() onClickCompleted;
 
   @override
   Widget build(BuildContext context) {
@@ -14,8 +18,12 @@ class OverlayWidgetExampleTopBar extends StatelessWidget
         color: Colors.white,
         padding: EdgeInsets.symmetric(horizontal: 4),
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.end,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
+            IconButton(
+                onPressed: () => Navigator.pop(context),
+                icon: Icon(Icons.arrow_back_ios)
+            ),
             Row(
               children: [
                 ValueListenableBuilder<bool>(
@@ -24,9 +32,9 @@ class OverlayWidgetExampleTopBar extends StatelessWidget
                     return IconButton(
                       onPressed: canUndo ? () => controller.undo() : null,
                       icon:
-                          canUndo
-                              ? Icon(Icons.undo)
-                              : Icon(Icons.undo, color: Colors.grey),
+                      canUndo
+                          ? Icon(Icons.undo)
+                          : Icon(Icons.undo, color: Colors.grey),
                     );
                   },
                 ),
@@ -36,16 +44,21 @@ class OverlayWidgetExampleTopBar extends StatelessWidget
                     return IconButton(
                       onPressed: canRedo ? () => controller.redo() : null,
                       icon:
-                          canRedo
-                              ? Icon(Icons.redo)
-                              : Icon(Icons.redo, color: Colors.grey),
+                      canRedo
+                          ? Icon(Icons.redo)
+                          : Icon(Icons.redo, color: Colors.grey),
                     );
                   },
                 ),
+                IconButton(
+                    onPressed: () => onClickCompleted(),
+                    icon: Icon(Icons.check)
+                )
+
               ],
-            ),
+            )
           ],
-        ),
+        )
       ),
     );
   }

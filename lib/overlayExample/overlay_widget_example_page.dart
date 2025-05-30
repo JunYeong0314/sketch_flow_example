@@ -175,49 +175,46 @@ class _OverlayWidgetExamplePageState extends State<OverlayWidgetExamplePage>
   }
 
   Widget _customBottomBar() {
-    return SafeArea(
-      child: Container(
-        height: 60,
-        color: Colors.white,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            IconButton(
-              onPressed:
-                  () =>
-                      _controller.updateConfig(toolType: SketchToolType.brush),
-              icon: Icon(Icons.edit),
-            ),
-            IconButton(
-              onPressed:
-                  () =>
-                      _controller.updateConfig(toolType: SketchToolType.eraser),
-              icon: Icon(CupertinoIcons.bandage_fill),
-            ),
-            IconButton(
-              onPressed: () => _controller.clear(),
-              icon: Icon(CupertinoIcons.trash),
-            ),
-            IconButton(
-              onPressed: () async {
-                /// 변경사항이 존재 할 때만 png 추출
-                if (_controller.contents.isNotEmpty) {
-                  final image = await _controller.extractPNG(
-                    repaintKey: _repaintKey,
-                  );
+    return Container(
+      color: Colors.white,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          IconButton(
+            onPressed:
+                () =>
+                _controller.updateConfig(toolType: SketchToolType.brush),
+            icon: Icon(Icons.edit),
+          ),
+          IconButton(
+            onPressed:
+                () =>
+                _controller.updateConfig(toolType: SketchToolType.eraser),
+            icon: Icon(CupertinoIcons.bandage_fill),
+          ),
+          IconButton(
+            onPressed: () => _controller.clear(),
+            icon: Icon(CupertinoIcons.trash),
+          ),
+          IconButton(
+            onPressed: () async {
+              /// 변경사항이 존재 할 때만 png 추출
+              if (_controller.contents.isNotEmpty) {
+                final image = await _controller.extractPNG(
+                  repaintKey: _repaintKey,
+                );
 
-                  if (image != null) {
-                    _overlayWidget = Image.memory(image);
-                    _toggleEditing();
-                  }
-                } else {
+                if (image != null) {
+                  _overlayWidget = Image.memory(image);
                   _toggleEditing();
                 }
-              },
-              icon: Icon(Icons.check_circle_outline_rounded, size: 28),
-            ),
-          ],
-        ),
+              } else {
+                _toggleEditing();
+              }
+            },
+            icon: Icon(Icons.check_circle_outline_rounded, size: 28),
+          ),
+        ],
       ),
     );
   }

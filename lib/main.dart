@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:sketch_flow/sketch_controller.dart';
-import 'package:sketch_flow/sketch_view.dart';
-import 'package:sketch_flow_example/baseExample/base_example_page.dart';
 import 'package:sketch_flow_example/memoExample/memo_example_page.dart';
 import 'package:sketch_flow_example/overlayExample/overlay_widget_example_page.dart';
+
+import 'darkModeExample/dark_mode_example_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -45,8 +44,8 @@ class HomePage extends StatelessWidget {
             children: [
               _baseButton(
                 context: context,
-                routeWidget: BaseExamplePage(),
-                text: "Base Example",
+                routeWidget: DarkModeExamplePage(),
+                text: "Dark Mode Example",
               ),
               _baseButton(
                 context: context,

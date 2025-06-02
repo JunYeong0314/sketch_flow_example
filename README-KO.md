@@ -62,3 +62,19 @@
 기본 상단/하단바와 펜 도구를 사용해 간단한 필기 메모 인터페이스를 빠르게 만드세요
 - 간편한 저장 및 편집  
 JSON 직렬화를 통해 원활한 저장 및 편집을 지원해 도면을 보존하고 나중에 다시 편집하는데 유용합니다
+
+## 🖋️ 간단한 사인 앱
+`sketch_flow`를 활용해 간단한 사인 앱을 만들어보세요:  
+[Signature Exmaple](https://github.com/JunYeong0314/sketch_flow_example/tree/main/lib/signatureExample)
+
+<p align="center">
+<img width = "24%" src='https://github.com/user-attachments/assets/60e1a930-cc7c-4b71-893c-18be21450f74' border='0'>
+<img width = "24%" src='https://github.com/user-attachments/assets/4311fac0-1138-4dbd-b41d-13efd3f1c3dc' border='0'>
+<img width = "24%" src='https://github.com/user-attachments/assets/c28dcba0-2f7f-4418-9832-0de9cca6885a' border='0'>
+<img width = "24%" src='https://github.com/user-attachments/assets/f43ebbf9-7775-4452-9dfa-d853113b261a' border='0'>
+</p>
+
+- 몇분만에 사인 앱 구축  
+`sketch_flow`를 사용하면 몇 줄의 코드만으로 세련되고 인터렉티브한 사인 앱을 구현할 수 있습니다
+- 가볍고 실용적인 구현  
+하나의 컨트롤러로 서명 데이터를 JSON 형식으로 저장하고 복원하거나, 캔버스를 지우거나, 편집 / 보기 모드 간에 전환하세요

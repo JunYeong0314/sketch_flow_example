@@ -12,26 +12,23 @@ class DarkModeExamplePage extends StatefulWidget {
 }
 
 class _DarkModeExamplePageState extends State<DarkModeExamplePage> {
-  late final SystemUiOverlayStyle _previousStyle;
+  late final SystemUiOverlayStyle _systemUiOverlayStyle;
 
   @override
   void initState() {
     super.initState();
-    _previousStyle = SystemUiOverlayStyle.dark;
 
     // 다크 테마 적용
-    SystemChrome.setSystemUIOverlayStyle(
-      const SystemUiOverlayStyle(
-        statusBarColor: Colors.transparent,
-        statusBarIconBrightness: Brightness.light,
-        statusBarBrightness: Brightness.dark,
-      ),
+    _systemUiOverlayStyle = SystemUiOverlayStyle(
+      statusBarColor: Colors.transparent,
+      statusBarIconBrightness: Brightness.light,
+      statusBarBrightness: Brightness.dark,
     );
   }
 
   @override
   void dispose() {
-    SystemChrome.setSystemUIOverlayStyle(_previousStyle);
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.dark);
     super.dispose();
   }
 
@@ -56,7 +53,7 @@ class _DarkModeExamplePageState extends State<DarkModeExamplePage> {
       appBar: SketchTopBar(
         controller: controller,
         onClickBackButton: () => Navigator.pop(context),
-        systemUiOverlayStyle: _previousStyle,
+        systemUiOverlayStyle: _systemUiOverlayStyle,
         topBarColor: Colors.black,
         backButtonIcon: Icon(Icons.arrow_back_ios, color: Colors.white),
         undoIcon: SketchToolIcon(

@@ -1,8 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:sketch_flow/sketch_controller.dart';
-import 'package:sketch_flow/sketch_model.dart';
-import 'package:sketch_flow/sketch_view.dart';
+import 'package:sketch_flow/sketch_flow.dart';
 import 'package:sketch_flow_example/common/base_top_bar.dart';
 import 'package:sketch_flow_example/overlayExample/overlay_widget_example_top_bar.dart';
 

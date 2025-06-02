@@ -8,12 +8,12 @@ class SketchMemo {
   SketchMemo({required this.thumbnail, required this.json, required this.date});
 }
 
-class MemoRepository {
-  MemoRepository._privateConstructor();
+class DrawingMemoRepository {
+  DrawingMemoRepository._privateConstructor();
 
-  static final MemoRepository _instance = MemoRepository._privateConstructor();
+  static final DrawingMemoRepository _instance = DrawingMemoRepository._privateConstructor();
 
-  static MemoRepository get instance => _instance;
+  static DrawingMemoRepository get instance => _instance;
 
   final ValueNotifier<List<SketchMemo>> _memoListNotifier = ValueNotifier([]);
 

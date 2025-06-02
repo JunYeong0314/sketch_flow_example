@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:sketch_flow/sketch_controller.dart';
+import 'package:sketch_flow/sketch_flow.dart';
 
-class MemoTopBar extends StatelessWidget implements PreferredSizeWidget {
-  const MemoTopBar({
+class DrawingMemoTopBar extends StatelessWidget implements PreferredSizeWidget {
+  const DrawingMemoTopBar({
     super.key,
     required this.controller,
     required this.onClickCompleted,

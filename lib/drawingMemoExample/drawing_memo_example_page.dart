@@ -1,12 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:sketch_flow_example/common/base_top_bar.dart';
-import 'package:sketch_flow_example/memoExample/memo_detail_page.dart';
-import 'memo_create_page.dart';
-import 'memo_repository.dart';
+import 'drawing_memo_create_page.dart';
+import 'drawing_memo_detail_page.dart';
+import 'drawing_memo_repository.dart';
 
-class MemoExamplePage extends StatelessWidget {
-  const MemoExamplePage({super.key});
+class DrawingMemoExamplePage extends StatelessWidget {
+  const DrawingMemoExamplePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +18,7 @@ class MemoExamplePage extends StatelessWidget {
       ),
       body: SafeArea(
         child: ValueListenableBuilder(
-          valueListenable: MemoRepository.instance.memoListNotifier,
+          valueListenable: DrawingMemoRepository.instance.memoListNotifier,
           builder: (context, memoList, child) {
             return Stack(
               fit: StackFit.expand,
@@ -58,7 +58,7 @@ class MemoExamplePage extends StatelessWidget {
                                   context,
                                   MaterialPageRoute(
                                     builder:
-                                        (context) => MemoDetailPage(
+                                        (context) => DrawingMemoDetailPage(
                                           sketchMemoIndex: index,
                                           sketchMemo: memoList[index],
                                         ),
@@ -76,7 +76,7 @@ class MemoExamplePage extends StatelessWidget {
                         () => Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => MemoCreatePage(),
+                            builder: (context) => DrawingMemoCreatePage(),
                           ),
                         ),
                     style: ElevatedButton.styleFrom(

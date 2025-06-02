@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:sketch_flow/sketch_controller.dart';
-import 'package:sketch_flow/sketch_model.dart';
-import 'package:sketch_flow/sketch_view.dart';
+import 'package:sketch_flow/sketch_flow.dart';
 import 'package:sketch_flow_example/common/base_top_bar.dart';
-import 'package:sketch_flow_example/memoExample/memo_top_bar.dart';
-import 'memo_repository.dart';
+import 'drawing_memo_repository.dart';
+import 'drawing_memo_top_bar.dart';
 
-class MemoDetailPage extends StatefulWidget {
-  const MemoDetailPage({
+class DrawingMemoDetailPage extends StatefulWidget {
+  const DrawingMemoDetailPage({
     super.key,
     required this.sketchMemo,
     required this.sketchMemoIndex,
@@ -17,10 +15,10 @@ class MemoDetailPage extends StatefulWidget {
   final int sketchMemoIndex;
 
   @override
-  State<MemoDetailPage> createState() => _MemoDetailPageState();
+  State<DrawingMemoDetailPage> createState() => _DrawingMemoDetailPageState();
 }
 
-class _MemoDetailPageState extends State<MemoDetailPage>
+class _DrawingMemoDetailPageState extends State<DrawingMemoDetailPage>
     with TickerProviderStateMixin {
   late final SketchController _controller;
 
@@ -77,7 +75,7 @@ class _MemoDetailPageState extends State<MemoDetailPage>
       backgroundColor: Colors.white,
       appBar:
           _isEditing
-              ? MemoTopBar(
+              ? DrawingMemoTopBar(
                 controller: _controller,
                 onClickCompleted: () async {
                   final json = _controller.toJson();
@@ -86,7 +84,7 @@ class _MemoDetailPageState extends State<MemoDetailPage>
                   );
 
                   if (image != null) {
-                    MemoRepository.instance.updateMemo(
+                    DrawingMemoRepository.instance.updateMemo(
                       index: widget.sketchMemoIndex,
                       updateMemo: SketchMemo(
                         thumbnail: Image.memory(image),

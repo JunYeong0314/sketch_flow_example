@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sketch_flow/sketch_controller.dart';
+import 'package:sketch_flow/sketch_flow.dart';
 
 class OverlayWidgetExampleTopBar extends StatelessWidget
     implements PreferredSizeWidget {

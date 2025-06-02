@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:sketch_flow_example/memoExample/memo_example_page.dart';
+import 'package:sketch_flow_example/drawingMemoExample/drawing_memo_example_page.dart';
 import 'package:sketch_flow_example/overlayExample/overlay_widget_example_page.dart';
+import 'package:sketch_flow_example/signatureExample/signature_example.dart';
 
 import 'darkModeExample/dark_mode_example_page.dart';
 
@@ -56,9 +57,14 @@ class HomePage extends StatelessWidget {
               ),
               _baseButton(
                 context: context,
-                routeWidget: MemoExamplePage(),
-                text: "Memo Example",
+                routeWidget: DrawingMemoExamplePage(),
+                text: "Drawing Memo Example",
               ),
+              _baseButton(
+                  context: context,
+                  routeWidget: SignatureExample(),
+                  text: "Signature Example"
+              )
             ],
           ),
         ),

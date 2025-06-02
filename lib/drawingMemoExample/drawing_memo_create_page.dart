@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:sketch_flow/sketch_controller.dart';
-import 'package:sketch_flow/sketch_view.dart';
-import 'package:sketch_flow_example/memoExample/memo_top_bar.dart';
-import 'memo_repository.dart';
+import 'package:sketch_flow/sketch_flow.dart';
+import 'package:sketch_flow_example/drawingMemoExample/drawing_memo_top_bar.dart';
+import 'drawing_memo_repository.dart';
 
-class MemoCreatePage extends StatefulWidget {
-  const MemoCreatePage({super.key});
+class DrawingMemoCreatePage extends StatefulWidget {
+  const DrawingMemoCreatePage({super.key});
 
   @override
-  State<MemoCreatePage> createState() => _MemoCreatePageState();
+  State<DrawingMemoCreatePage> createState() => _DrawingMemoCreatePageState();
 }
 
-class _MemoCreatePageState extends State<MemoCreatePage> {
+class _DrawingMemoCreatePageState extends State<DrawingMemoCreatePage> {
   late final SketchController controller;
   final GlobalKey repaintKey = GlobalKey();
 
@@ -25,7 +24,7 @@ class _MemoCreatePageState extends State<MemoCreatePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: MemoTopBar(
+      appBar: DrawingMemoTopBar(
         controller: controller,
         onClickCompleted: () async {
           final image = await controller.extractPNG(repaintKey: repaintKey);
@@ -40,7 +39,7 @@ class _MemoCreatePageState extends State<MemoCreatePage> {
               json: json,
             );
 
-            MemoRepository.instance.addMemo(memo: memo);
+            DrawingMemoRepository.instance.addMemo(memo: memo);
             Navigator.pop(this.context);
           }
         },

@@ -1,8 +1,5 @@
 # ✨ Sketch Flow Example Project  
 [English](https://github.com/JunYeong0314/sketch_flow_example) / [한국어](https://github.com/JunYeong0314/sketch_flow_example/blob/main/README-KO.md)
-<p align="center">
-<img width = "24%" src='https://github.com/user-attachments/assets/8f1bc6b1-256f-4a9d-b818-c73594d605ca' border='0'>
-</p>
 
 This example project showcases the full potential of the [sketch_flow](https://pub.dev/packages/sketch_flow) package in real-world scenarios.  
 - Test it live!: [Try it](https://junyeong0314.github.io/sketch_flow_example/)  

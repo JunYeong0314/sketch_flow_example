@@ -1,10 +1,6 @@
 # ✨ Sketch Flow 예제 프로젝트
 [English](https://github.com/JunYeong0314/sketch_flow_example) / [한국어](https://github.com/JunYeong0314/sketch_flow_example/blob/main/README-KO.md)
 
-<p align="center">
-<img width = "24%" src='https://github.com/user-attachments/assets/8f1bc6b1-256f-4a9d-b818-c73594d605ca' border='0'>
-</p>
-
 이 예제 프로젝트는 실제 시나리오에서 [sketch_flow](https://pub.dev/packages/sketch_flow) 패키지의 전체 잠재력을 보여줍니다
 - 웹에서 테스트 해보기: [테스트 해보기](https://junyeong0314.github.io/sketch_flow_example/)  
 - `sketch_flow` 레포지토리 구경하기: [레포지토리 이동](https://github.com/Fasoo-DigitalPage/sketch_flow)
